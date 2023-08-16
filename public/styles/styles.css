@@ -305,10 +305,12 @@ button {
         object-fit: cover; }
       .header-bottom-item-content, .header-bottom-item-nation {
         -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease; }
+        transition: all 0.5s ease;
+        will-change: transform; }
       .header-bottom-item-place {
         -webkit-transition: all 0.2s ease;
-        transition: all 0.2s ease; }
+        transition: all 0.2s ease;
+        will-change: transform; }
       .header-bottom-item-content {
         position: absolute;
         left: 50%;
@@ -319,8 +321,7 @@ button {
         padding: 0 1rem;
         text-align: center;
         -webkit-transform: translate(-50%, 96px);
-        transform: translate(-50%, 96px);
-        will-change: transform; }
+        transform: translate(-50%, 96px); }
       .header-bottom-item-place {
         min-height: 4rem;
         font-size: 3rem;
@@ -333,13 +334,11 @@ button {
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         word-break: break-word;
-        line-height: 1;
-        will-change: transform; }
+        line-height: 1; }
       .header-bottom-item-nation {
         font-weight: 500;
         margin-bottom: 7.6rem;
-        color: #ffc74a;
-        will-change: transform; }
+        color: #ffc74a; }
       .header-bottom-item-button {
         width: 70%;
         height: 5rem;
@@ -448,7 +447,8 @@ button {
         font-size: 3rem; } }
   @media screen and (max-width: 767px) {
     .header {
-      padding: 0 1.5rem; }
+      padding: 0 1.5rem;
+      min-height: 90rem; }
       .header-top {
         padding-top: 2rem; }
         .header-top-logo img {
@@ -468,11 +468,13 @@ button {
           font-size: 1.6rem; }
         .header-top-search input {
           padding: 1rem; }
-      .header-center-heading span {
-        font-size: 5.2rem; }
-      .header-center-slogan {
-        font-size: 16.19px;
-        line-height: 1.2; }
+      .header-center {
+        margin-top: 15rem; }
+        .header-center-heading span {
+          font-size: 5.2rem; }
+        .header-center-slogan {
+          font-size: 16.19px;
+          line-height: 1.2; }
       .header-bottom-title {
         font-size: 16.19px;
         line-height: 1.2; }

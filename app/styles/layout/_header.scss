@@ -190,9 +190,11 @@
       }
       &-content,  &-nation {
         transition: all 0.5s ease;
+        will-change: transform;
       }
       &-place {
         transition: all 0.2s ease;
+        will-change: transform;
       }
       &-content {
         @include absoluteCenter("left");
@@ -201,7 +203,6 @@
         padding: 0 1rem;
         text-align: center;
         transform: translate(-50%,96px);
-        will-change: transform;
       }
       &-place {
         min-height: 4rem;
@@ -209,13 +210,11 @@
         font-weight: bold;
         margin-bottom: 8px;
         @include textClamp(2,1);
-        will-change: transform;
       }
       &-nation {
         font-weight: 500;
         margin-bottom: 7.6rem;
         color: $main-color;
-        will-change: transform;
       }
       &-button {
         width: 70%;
@@ -337,6 +336,7 @@
   }
   @include maxWidth(767px) {
     padding: 0 1.5rem;
+    min-height: 90rem;
     &-top {
       padding-top: 2rem;
       &-logo {
@@ -366,6 +366,7 @@
       }
     }
     &-center {
+      margin-top: 15rem;
       &-heading span {
         font-size: 5.2rem;
       }
