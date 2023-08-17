@@ -149,6 +149,9 @@
     &-list {
       @include flexbox;
       margin-left: -1.5rem;
+      background: #fff;
+      // padding-top: 1.5rem;
+      padding: 1.5rem 1.5rem 0 1.5rem;
     }
     .item {
       position: relative;
@@ -180,6 +183,7 @@
       img {
         @include size(100%);
         object-fit: cover;
+        border-radius: inherit;
       }
       &-content,  &-nation {
         transition: all 0.5s ease;
@@ -353,7 +357,8 @@
       }
       .item {
         margin-left: 0;
-        border-radius: unset;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
     }
   }
