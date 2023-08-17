@@ -21,7 +21,6 @@ section.header
           input(type="text" placeholder="Search..." id="search")
           button(type="submit")
             img(src="./images/img-icon-search.png")
-        img(src="./images/img-icon-search.png").header-top-search-icon
   .header-center
     h1.header-center-heading 
       span Fall in love
@@ -31,34 +30,34 @@ section.header
   .header-bottom
     h2.header-bottom-title Popular places to discover
       i.fal.fa-arrow-right
-    ul.header-bottom-list
-      li.header-bottom-item
-        img(src="https://images.unsplash.com/photo-1566327419133-e407f6954cbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80")
-        .header-bottom-item-content 
-          h2.header-bottom-item-place Nozabaka
-          p.header-bottom-item-nation Pormoskie
-          a(href="#").header-bottom-item-button View offers
-      li.header-bottom-item
-        img(src="./images/img-header-2.png")
-        .header-bottom-item-content 
-          h2.header-bottom-item-place Zakopane
-          p.header-bottom-item-nation Malopolskie
-          a(href="#").header-bottom-item-button View offers
-      li.header-bottom-item
-        img(src="https://images.unsplash.com/photo-1691145697326-aa4fa5da7174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1664&q=80")
-        .header-bottom-item-content 
-          h2.header-bottom-item-place Sandomierz 
-          p.header-bottom-item-nation Swietorzyskie
-          a(href="#").header-bottom-item-button View offers
-      li.header-bottom-item
-        img(src="./images/img-header-4.png")
-        .header-bottom-item-content 
-          h2.header-bottom-item-place Sopot 
-          p.header-bottom-item-nation Pormoskie
-          a(href="#").header-bottom-item-button View offers
-      li.header-bottom-item
-        img(src="https://images.unsplash.com/photo-1621949469882-702291f981c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80")
-        .header-bottom-item-content 
-          h2.header-bottom-item-place Towner
-          p.header-bottom-item-nation Pormoskie
-          a(href="#").header-bottom-item-button View offers
+    .header-bottom-list
+      +item({
+        src:"https://images.unsplash.com/photo-1566327419133-e407f6954cbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+        place:"Nozabaka",
+        nation:"Pormoskie",
+        link:"#"
+      })
+      +item({
+        src:"./images/img-header-2.png",
+        place:"Zakopane",
+        nation:"Malopolskie",
+        link:"#"
+      })
+      +item({
+        src:"https://images.unsplash.com/photo-1691145697326-aa4fa5da7174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1664&q=80",
+        place:"Sandomierz",
+        nation:"Swietorzyskie",
+        link:"#"
+      })
+      +item({
+        src:"./images/img-header-4.png",
+        place:"Sopot",
+        nation:"Pormoskie",
+        link:"#"
+      })
+      +item({
+        src:"https://images.unsplash.com/photo-1621949469882-702291f981c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+        place:"Towner",
+        nation:"Pormoskie",
+        link:"#"
+      })

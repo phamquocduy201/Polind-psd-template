@@ -1,6 +1,6 @@
 .header {
   padding: 0 4rem;
-  min-height: 121rem;
+  min-height: 120rem;
   background: linear-gradient(to bottom, rgba(#000, 0.7)) ,url(../images/img-header-bg.png) no-repeat center center / cover;
   color: #fff;
   position: relative;
@@ -71,10 +71,6 @@
       border-radius: 4px;
       overflow: hidden;
       @include flexbox;
-      // // display: none;
-      // &.is-expand {
-      //   // display: flex;
-      // }
       input , button {
         border: unset;
       }
@@ -90,9 +86,6 @@
         padding: 0 1.5rem;
         background-color: $secondary-color;
         flex-shrink: 0;
-      }
-      &-icon {
-        display: none;
       }
     }
   }
@@ -155,13 +148,13 @@
     }
     &-list {
       @include flexbox;
-      margin-left: -3rem;
+      margin-left: -1.5rem;
     }
-    &-item {
+    .item {
       position: relative;
-      width: calc(20% - 3rem);
-      max-height: 40rem;
-      margin-left: 3rem;
+      width: calc(20% - 1.5rem);
+      height: 40rem;
+      margin-left: 1.5rem;
       border-radius: 4px;
       overflow: hidden;
       flex-shrink: 0;
@@ -174,13 +167,13 @@
         &::before {
           background-color: rgba(#000, 0.3);
         }
-        .header-bottom-item-content {
+        .item-content {
           transform: translate(-50%,0);
         }
-        .header-bottom-item-place {
+        .item-place {
           font-size: 3.8rem;
         }
-        .header-bottom-item-nation {
+        .item-nation {
           color: #fff;
         }
       }
@@ -190,11 +183,9 @@
       }
       &-content,  &-nation {
         transition: all 0.5s ease;
-        will-change: transform;
       }
       &-place {
         transition: all 0.2s ease;
-        will-change: transform;
       }
       &-content {
         @include absoluteCenter("left");
@@ -203,6 +194,7 @@
         padding: 0 1rem;
         text-align: center;
         transform: translate(-50%,96px);
+        will-change: transform;
       }
       &-place {
         min-height: 4rem;
@@ -210,11 +202,13 @@
         font-weight: bold;
         margin-bottom: 8px;
         @include textClamp(2,1);
+        will-change: transform;
       }
       &-nation {
         font-weight: 500;
         margin-bottom: 7.6rem;
         color: $main-color;
+        will-change: transform;
       }
       &-button {
         width: 70%;
@@ -232,6 +226,22 @@
         color: $main-dark-color;
       }
     }
+  }
+  .slick-arrow {
+    position: absolute;
+    top: -6.5rem;
+    background-color: transparent;
+    border: unset;
+    i {
+      font-size: 4rem;
+      color: $secondary-color;
+    }
+  }
+  .slick-prev {
+    left: 10%;
+  }
+  .slick-next {
+    right: 10%;
   }
   @include maxWidth(1279px) {
     &-top {
@@ -280,58 +290,13 @@
         width: 100%;
       }
     }
-    &-bottom {
-      &-list {
-        margin-left: -2rem;
-      }
-      &-item {
-        width: calc(20% - 20px);
-        margin-left: 2rem;
-        &-content {
-          transform: translate(-50%,96px);
-        }
-        &-place {
-          font-size: 2.5rem;
-        }
-        &-button {
-          height: 4rem;
-          font-size: 1.3rem;
-        }
-        &:hover {
-          .header-bottom-item-place {
-            font-size: 2.8rem;
-          }
-        }
-      }
+    &-bottom .item {
+      height: 35rem;
     }
   }
   @include maxWidth(1023px) {
-    &-bottom {
-      &-title i {
-        display: inline-block;
-      }
-      &-list {
-        margin-left: -1.5rem;
-        overflow: auto;
-        &::-webkit-scrollbar {
-          display: none;
-        }
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        scroll-snap-type: x mandatory;
-        scroll-snap-stop: always;
-      }
-      &-item {
-        width: calc((100% / 3) - 1.4rem);
-        max-height: 35rem;
-        margin-left: 1.5rem;
-        scroll-snap-align: end;
-        &:hover {
-          .header-bottom-item-place {
-            font-size: 3rem;
-          }
-        }
-      }
+    &-bottom .item:hover .item-place {
+      font-size: 3.5rem
     }
   }
   @include maxWidth(767px) {
@@ -379,22 +344,17 @@
       &-title {
         font-size: 16.19px;
         line-height: 1.2;
+        i {
+          display: inline-block;
+        }
       }
       &-list { 
         margin-left: -1px;
       }
-      &-item {
-        width: 100%;
-        max-height: 35rem;
+      .item {
         margin-left: 0;
-        scroll-snap-align: center;
         border-radius: unset;
       }
     }
   }
-}
-
-body {
-  height: 2000px;
-  background-color: purple;
 }

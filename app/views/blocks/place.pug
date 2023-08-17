@@ -1,0 +1,57 @@
+section.place
+  .container
+    h2.place-title What you want to go?
+    form.place-search
+      input(type="text" placeholder="Search place")
+      button(type="submit")
+        i.fa.fa-search.place-search-icon 
+    .place-tag 
+      .place-tag-category
+        span.place-tag-category-item.active Journey
+        span.place-tag-category-item Travelers
+        span.place-tag-category-item Guide
+      .place-tag-destination
+        span.place-tag-destination-item Mazury 
+        span.place-tag-destination-item Cracow
+        span.place-tag-destination-item Zakopane 
+    .place-list
+      +item({
+        src:"https://images.unsplash.com/photo-1559910369-3924e235c1cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1758&q=80",
+        place:"Pozna",
+        nation:"Wielkopolskie",
+        link:"#"
+      })
+      +item({
+        src:"https://images.unsplash.com/photo-1495562569060-2eec283d3391?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+        place:"Warsaw",
+        nation:"Mazowieckie",
+        link:"#"
+      })
+      +item({
+        src:"https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+        place:"Wroclaw",
+        nation:"Dolnoslaskie",
+        link:"#"
+      })
+      +item({
+        src:"https://images.unsplash.com/photo-1491466424936-e304919aada7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80",
+        place:"Karpacz",
+        nation:"Dolnoslaskie",
+        link:"#"
+      })
+      +item({
+        src:"https://images.unsplash.com/photo-1504731231146-c0f65dc6a950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+        place:"Dolina Olczyska",
+        nation:"Malopolskie",
+        link:"#"
+      })
+      +item({
+        src:"https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+        place:"Kozy",
+        nation:"Slaskie",
+        link:"#"
+      })
+
+      
+    
+  

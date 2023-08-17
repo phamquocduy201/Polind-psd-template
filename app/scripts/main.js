@@ -35,19 +35,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // Slick slider
-// $(document).ready(function () {
-//   $(".quote-list").slick({
-//     prevArrow:
-//       "<button type='button' class='slick-prev pull-left'><i class='fal fa-angle-left' aria-hidden='true'></i></button>",
-//     nextArrow:
-//       "<button type='button' class='slick-next pull-right'><i class='fal fa-angle-right' aria-hidden='true'></i></button>",
-//     responsive: [
-//       {
-//         breakpoint: 767,
-//         settings: {
-//           arrows: false,
-//         },
-//       },
-//     ],
-//   });
-// // });
+$(document).ready(function () {
+  if (window.innerWidth < 1366) {
+    $(".header-bottom-list").slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      prevArrow:
+      "<button type='button' class='slick-prev pull-left'><i class='fal fa-angle-left' aria-hidden='true'></i></button>",
+      nextArrow:
+        "<button type='button' class='slick-next pull-right'><i class='fal fa-angle-right' aria-hidden='true'></i></button>",
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            arrows: false,
+          },
+        }
+      ]
+    });
+  }
+});

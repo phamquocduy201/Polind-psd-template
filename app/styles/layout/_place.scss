@@ -1,0 +1,225 @@
+.place {
+  padding-top: 27rem;
+  text-align: center;
+  &-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: $grey-medium-color;
+    margin-bottom: 5rem;
+  }
+  &-search {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 40px 0px;
+    margin-bottom: 2rem;
+    @include flexbox((
+      justify-content: space-between
+    ));
+    input, button {
+      border: unset;
+      flex-shrink: 0;
+      padding-left: 3rem;
+      background-color: #fff;
+    }
+    input {
+      flex: 1;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      border-radius: 3rem 0 0 3rem;
+      font-size: 1.8rem;
+      color: $grey-medium-color;
+    }
+    button {
+      padding-right: 3rem;
+      border-radius: 0 3rem 3rem 0;
+      i {
+        font-size: 1.8rem;
+        color: $main-color;
+      }
+    }
+  }
+  &-tag {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include flexbox((
+      justify-content: space-between
+    ));
+    margin-bottom: 3rem;
+    span {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      &:not(:first-of-type) {
+        margin-left: 1rem;
+      }
+    }
+    &-category span {
+      background-color: $grey-light-color;
+      color: #fff;
+      &.active {
+        background-color: $main-color;
+      }
+    }
+    &-destination span {
+      border: 1px solid #f1f2f6;
+      background-color: transparent;
+      color: $grey-color;
+    }
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas: 
+    "h1 h2 h3"
+    "h4 h5 h6";
+    grid-gap: 3rem;
+    margin-bottom: 3rem;
+    .item {
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 40px 0px;
+      max-height: 35rem;
+      padding: 1rem;
+      border-radius: 6px;
+      img {
+        border-radius: inherit;
+        @include size(100%,50%);
+        object-fit: cover;
+      }
+      &-content {
+        margin-top: 2.6rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      &-place {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+        @include textClamp;
+        line-height: 1;
+        color: $grey-medium-color;
+      }
+      &-nation {
+        font-weight: 500;
+        margin-bottom: 2.5rem;
+        @include textClamp;
+        color: $grey-medium-color;
+      }
+      &-button {
+        width: 50%;
+        height: 4rem;
+        margin: 0 auto;
+        border-radius: 3rem;
+        @include flexbox((
+          align-items: center,
+          justify-content: center
+        ));
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 20px 0px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $grey-light-color;
+        transition: all 0.25s linear;
+        &:hover {
+          background-color: $main-color;
+          box-shadow: unset;
+          color: $main-dark-color;
+        }
+      }
+    }
+  }
+  //Responsive
+  @include maxWidth(1279px) {
+    &-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas: 
+      "h1 h2"
+      "h3 h4"
+      "h5 h6";
+      grid-gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    &-title {
+      margin-bottom: 4rem;
+    }
+    &-search input {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding-top: 23rem;
+    &-list {
+      grid-gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    &-title {
+      font-size: 2.8rem;
+    }
+    &-tag {
+      margin-bottom: 2.5rem;
+      span {
+        padding: 8px 1.5rem;
+      }
+    }
+    &-search {
+      input, button {
+        padding-left: 2rem;
+      }
+      input {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.6rem;
+      }
+      button {
+        padding-right: 2rem;
+        i {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  @include maxWidth(767px) {
+    &-tag {
+      display: block;
+      text-align: left;
+      margin-bottom: 1.5rem;
+      &-category, &-destination {
+        margin-left: -1rem;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        span:first-of-type {
+          margin-left: 1rem;
+        }
+      }
+      &-category {
+        margin-bottom: 1.5rem;
+      }
+    }
+    &-list {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      grid-template-areas: 
+      "h1"
+      "h2"
+      "h3"
+      "h4"
+      "h5"
+      "h6";
+    }
+    &-search button i {
+      font-size: 1.4rem;
+    }
+  }
+  @include maxWidth(424px) {
+    &-title {
+      font-size: 2.5rem;
+    }
+  }
+}

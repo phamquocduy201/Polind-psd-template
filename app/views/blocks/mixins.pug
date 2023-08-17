@@ -1,0 +1,7 @@
+mixin item(data) 
+  .item
+    img(src= data.src)
+    .item-content
+      h2.item-place= data.place
+      p.item-nation= data.nation
+      a(href= data.link).item-button View offers
