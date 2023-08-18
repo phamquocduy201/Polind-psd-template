@@ -1,0 +1,121 @@
+.explore {
+  min-height: 90rem;
+  padding-top: 7rem;
+  padding-bottom: 5rem; 
+  background-color: #f8f9fb;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  &-text {
+    @include absoluteCenter("top");
+    right: -20rem;
+    span {
+      display: block;
+      text-transform: uppercase;
+      font-size: 354.71px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(234,234,234,0.5);
+      line-height: 0.75;
+    }
+  }
+  .container {
+    position: relative;
+  }
+  &-title {
+    @extend .place-title;
+  }
+  &-content {
+    @include flexbox((
+      align-items: flex-start
+    ));
+  }
+  &-info {
+    width: 50%;
+    padding-top: 4.5rem;
+    padding-right: 3.5rem;
+    text-align: left;
+    &-title {
+      margin-bottom: 5rem;
+      font-size: 3.6rem;
+      font-weight: bold;
+      color: $main-color;
+    }
+    &-text-1, &-text-2 {
+      color: $grey-medium-color;
+      font-weight: 500;
+      @include textClamp(5,1.8);
+    }
+    &-text-1 {
+      margin-bottom: 4rem;
+    }
+    &-text-2 {
+      margin-bottom: 6rem;
+    }
+  }
+  &-button {
+    width: 40%;
+    height: 5rem;
+    border-radius: 3rem;
+    @include flexbox((
+      align-items: center,
+      justify-content: center
+    ));
+    background-color: $main-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $main-dark-color;
+  }
+  &-img {
+    width: 50%;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+    img {
+      @include posFull;
+      @include size(100%);
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding-bottom: 4rem;
+    &-content {
+      flex-direction: column;
+    }
+    &-info {
+      order: 1;
+      width: 100%;
+      margin-bottom: 0;
+      padding-right: 0;
+      padding-top: 0;
+      &-title {
+        font-size: 2.8rem;
+        margin-bottom: 3rem;
+      }
+      &-text-1 {
+        margin-bottom: 2rem;
+      }
+      &-text-2 {
+        margin-bottom: 3rem;
+      }
+    }
+    &-button {
+      margin: 0 auto;
+    }
+    &-img {
+      width: 100%;
+      padding-bottom: 100%;
+      margin-bottom: 4rem;
+      order: 0;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-button {
+      width: 100%;
+      height: 4rem;
+    }
+  }
+}
