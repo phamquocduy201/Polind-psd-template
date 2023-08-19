@@ -1,0 +1,42 @@
+.footer {
+  min-height: 496px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  &-underText {
+    @include absoluteCenter;
+    text-transform: uppercase;
+    font-size: 354.71px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 30px rgba(234,234,234,0.5);
+  }
+  .container {
+    @include absoluteCenter;
+    text-align: center;
+  }
+  &-logo {
+    width: 5rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  &-copyRights {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: $grey-medium-color;
+    line-height: 1.3;
+  }
+  @include maxWidth(1279px) {
+    &-logo {
+      width: 4rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-logo {
+      width: 3.5rem;
+    }
+    &-copyRights {
+      font-size: 2rem;
+    }
+  }
+}
