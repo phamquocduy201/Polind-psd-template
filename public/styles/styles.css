@@ -895,7 +895,9 @@ button {
     font-weight: 500;
     color: #fff; }
     .signup-caption a {
-      color: #ffc74a; }
+      text-decoration: none;
+      color: #ffc74a;
+      border-bottom: 1px solid #ffc74a; }
   @media screen and (max-width: 767px) {
     .signup-title {
       font-size: 5.2rem; }
