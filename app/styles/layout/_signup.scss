@@ -25,6 +25,7 @@
     background-color: $main-color;
     font-weight: bold;
     color: $main-dark-color;
+    white-space: nowrap;
   }
   &-caption {
     font-size: 1.85rem;
@@ -41,8 +42,7 @@
       font-size: 5.2rem;
     }
     &-button {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding: 1rem 3rem;
     }
   }
 }
