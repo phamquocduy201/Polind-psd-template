@@ -102,11 +102,12 @@
         font-weight: bold;
         margin-bottom: 8px;
         @include textClamp;
-        line-height: 1;
+        line-height: 1.2;
         color: $grey-medium-color;
       }
       &-nation {
         font-weight: 500;
+        line-height: 1.5;
         margin-bottom: 2.5rem;
         @include textClamp;
         color: $grey-medium-color;

@@ -4,6 +4,9 @@
   background: linear-gradient(to bottom, rgba(#000, 0.7)) ,url(../images/img-header-bg.png) no-repeat center center / cover;
   color: #fff;
   position: relative;
+  --top-search-button-i-fz: 1.8rem;
+  --center-button-height: 5rem;
+  --bottom-item-height: 5rem;
   &-top {
     padding-top: 4rem;
     @include flexbox((
@@ -67,7 +70,6 @@
       color: #fff;
     }
     &-search {
-      max-width: 30rem;
       border-radius: 4px;
       overflow: hidden;
       @include flexbox;
@@ -75,7 +77,7 @@
         border: unset;
       }
       input {
-        flex: 1;
+        width: 100%;
         padding: 1rem 1.5rem;
         color: $grey-dark-color;
         &::placeholder {
@@ -84,8 +86,16 @@
       }
       button {
         padding: 0 1.5rem;
+        @include flexbox((
+          align-items: center,
+          justify-content: center
+        ));
         background-color: $secondary-color;
         flex-shrink: 0;
+        i {
+          font-size: var(--top-search-button-i-fz);
+          color: $main-color;
+        }
       }
     }
   }
@@ -113,7 +123,7 @@
       cursor: pointer;
       width: 100%;
       max-width: 23rem;
-      height: 5rem;
+      height: var(--center-button-height);
       margin: 0 auto;
       border-radius: 3rem;
       @include flexbox((
@@ -150,7 +160,6 @@
       @include flexbox;
       margin-left: -1.5rem;
       background: #fff;
-      // padding-top: 1.5rem;
       padding: 1.5rem 1.5rem 0 1.5rem;
     }
     .item {
@@ -206,7 +215,7 @@
         font-weight: bold;
         margin-bottom: 8px;
         @include textClamp(2,1);
-        will-change: transform;
+        will-change: font-size;
       }
       &-nation {
         font-weight: 500;
@@ -216,7 +225,7 @@
       }
       &-button {
         width: 70%;
-        height: 5rem;
+        height: var(--bottom-item-height);
         margin: 0 auto;
         border-radius: 3rem;
         @include flexbox((
@@ -299,13 +308,17 @@
     }
   }
   @include maxWidth(1023px) {
+    --top-search-button-i-fz: 1.6rem;
+    --bottom-item-height: 4rem;
     &-bottom .item:hover .item-place {
-      font-size: 3.5rem
+      font-size: 3.4rem
     }
   }
   @include maxWidth(767px) {
     padding: 0 1.5rem;
     min-height: 90rem;
+    --top-search-button-i-fz: 1.4rem;
+    --center-button-height: 4rem;
     &-top {
       padding-top: 2rem;
       &-logo {
@@ -358,9 +371,8 @@
         padding-right: 0;
       }
       .item {
-        margin-left: 0;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
       }
     }
   }

@@ -46,7 +46,10 @@ button {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7))), url(../images/img-header-bg.png) no-repeat center center/cover;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7)), url(../images/img-header-bg.png) no-repeat center center/cover;
   color: #fff;
-  position: relative; }
+  position: relative;
+  --top-search-button-i-fz: 1.8rem;
+  --center-button-height: 5rem;
+  --bottom-item-height: 5rem; }
   .header-top {
     padding-top: 4rem;
     display: -webkit-box;
@@ -141,7 +144,6 @@ button {
       font-weight: 500;
       color: #fff; }
     .header-top-search {
-      max-width: 30rem;
       border-radius: 4px;
       overflow: hidden;
       display: -webkit-box;
@@ -162,9 +164,7 @@ button {
       .header-top-search input, .header-top-search button {
         border: unset; }
       .header-top-search input {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
+        width: 100%;
         padding: 1rem 1.5rem;
         color: #5f6264; }
         .header-top-search input::-webkit-input-placeholder {
@@ -177,9 +177,27 @@ button {
           color: #8d97a5; }
       .header-top-search button {
         padding: 0 1.5rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
         background-color: #ed6950;
         -ms-flex-negative: 0;
         flex-shrink: 0; }
+        .header-top-search button i {
+          font-size: var(--top-search-button-i-fz);
+          color: #ffc74a; }
   .header-center {
     margin-top: 24rem;
     text-align: center; }
@@ -199,7 +217,7 @@ button {
       cursor: pointer;
       width: 100%;
       max-width: 23rem;
-      height: 5rem;
+      height: var(--center-button-height);
       margin: 0 auto;
       border-radius: 3rem;
       display: -webkit-box;
@@ -341,7 +359,7 @@ button {
         -webkit-line-clamp: 2;
         word-break: break-word;
         line-height: 1;
-        will-change: transform; }
+        will-change: font-size; }
       .header-bottom .item-nation {
         font-weight: 500;
         margin-bottom: 7.6rem;
@@ -349,7 +367,7 @@ button {
         will-change: transform; }
       .header-bottom .item-button {
         width: 70%;
-        height: 5rem;
+        height: var(--bottom-item-height);
         margin: 0 auto;
         border-radius: 3rem;
         display: -webkit-box;
@@ -433,12 +451,17 @@ button {
     .header-bottom .item {
       height: 35rem; } }
   @media screen and (max-width: 1023px) {
-    .header-bottom .item:hover .item-place {
-      font-size: 3.5rem; } }
+    .header {
+      --top-search-button-i-fz: 1.6rem;
+      --bottom-item-height: 4rem; }
+      .header-bottom .item:hover .item-place {
+        font-size: 3.4rem; } }
   @media screen and (max-width: 767px) {
     .header {
       padding: 0 1.5rem;
-      min-height: 90rem; }
+      min-height: 90rem;
+      --top-search-button-i-fz: 1.4rem;
+      --center-button-height: 4rem; }
       .header-top {
         padding-top: 2rem; }
         .header-top-logo img {
@@ -475,9 +498,8 @@ button {
         padding-left: 0;
         padding-right: 0; }
       .header-bottom .item {
-        margin-left: 0;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem; } }
+        margin-left: 1.5rem;
+        margin-right: 1.5rem; } }
 
 .place {
   padding-top: 27rem;
@@ -604,10 +626,11 @@ button {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        line-height: 1;
+        line-height: 1.2;
         color: #606f81; }
       .place-list .item-nation {
         font-weight: 500;
+        line-height: 1.5;
         margin-bottom: 2.5rem;
         width: 100%;
         max-width: 100%;
